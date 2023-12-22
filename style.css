@@ -484,7 +484,7 @@ footer h6 {
   }
   .foto-1:hover{
     
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     z-index: 8;
     border-radius: 10%;
     transition: transform 0.8s;
@@ -494,7 +494,7 @@ footer h6 {
   }
 .foto-2 {
     grid-area: foto2;
-    background-image: url(./img/nebo2jpeg.jpeg);
+    background-image: url(img/nebo2jpeg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
@@ -502,7 +502,7 @@ footer h6 {
   }
   .foto-2:hover{
     
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     z-index: 8;
     border-radius: 10%;
     transition: transform 0.8s;
@@ -511,7 +511,7 @@ footer h6 {
   }
 .foto-3 {
     grid-area: foto3;
-    background-image: url(./img/nebo3jpeg.jpeg);
+    background-image: url(img/nebo3jpeg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center; 
@@ -519,12 +519,21 @@ footer h6 {
   }
 .foto-3:hover{
     
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     z-index: 8;
     border-radius: 10%;
     transition: transform 0.8s;
     background-size: auto;
 
+  }
+
+  .new-legoza h6 {
+    color: #000;
+    font-weight: bold;
+    margin: auto;
+    padding: 0 20px;
+    margin-top: -83px;
+    text-align: center;
   }
 
   @media (max-width: 1550px) {
@@ -592,7 +601,7 @@ footer h6 {
         .foto-1 {
             background-size: cover;
           }
-        .foto-1:hover{
+        /* .foto-1:hover{
             transform: scale(1.1);
           }
         .foto-2:hover{
@@ -600,7 +609,7 @@ footer h6 {
           }
         .foto-3:hover{
             transform: scale(1.1);
-          }
+          } */
 	
 }
 @media (max-width: 576px) {
@@ -609,7 +618,7 @@ footer h6 {
     }
     .new-legoza {
         max-width: 458px;
-        max-height: 1510px;
+        max-height: 1630px;
         padding: 20px 20px;
     }
 	.cards-grid {
@@ -625,7 +634,7 @@ footer h6 {
             "foto3"
             "foto3";
         }
-        .foto-1:hover{
+        /* .foto-1:hover{
             transform: scale(1.1);
           }
         .foto-2:hover{
@@ -633,7 +642,7 @@ footer h6 {
           }
         .foto-3:hover{
             transform: scale(1.1);
-          }
+          } */
 }
 
 @media (max-width: 500px) {
@@ -701,7 +710,24 @@ footer h6 {
     gap: 50px;
 }
 
-.ribca img {
+.oblozca-two {
+    display: flex;
+    margin: 0 auto;
+    --m: radial-gradient(circle farthest-side at left,#000 99%,#0000) 0 0%/50% 92% no-repeat, 
+    radial-gradient(circle farthest-side at right ,#001 99%,#0000) 100% 0/50% 92% no-repeat;
+
+  -webkit-mask: var(--m);
+          mask: var(--m);
+  transition: .5s linear;
+  cursor: pointer;
+  width: 65%;
+}
+
+.oblozca-two:hover {
+    -webkit-mask-position: 99% 0%, 0% 0%;
+}
+
+.oblozca img {
     --m:
       radial-gradient(circle farthest-side at right,#000 99%,#0000) 
         0 100%/46% 92% no-repeat,
@@ -709,13 +735,12 @@ footer h6 {
         100% 0/46% 92% no-repeat;
     -webkit-mask: var(--m);
             mask: var(--m);
-    filter: grayscale(.8);
     transition: .3s linear;
     cursor: pointer;
     width: 35%;
   }
 
-  .ribca img:hover {
+  .oblozca img:hover {
     -webkit-mask-position: 7.5% 50%,92.5% 50%;
             mask-position: 7.5% 50%,92.5% 50%;
     filter: grayscale(0);
@@ -746,6 +771,9 @@ footer h6 {
     }
     .ribca img {
         width: 45%;
+    }
+    .oblozca-all {
+        width: 110%;
     }
     .zoom-avtomat {
         width: 50%;
@@ -817,7 +845,7 @@ footer h6 {
             flex-direction: column;
         }    
     .ribca img {
-        width: 80%;
+        width: 85%;
     }
     .zoom-avtomat {
         width: 70%;
