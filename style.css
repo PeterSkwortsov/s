@@ -1,6 +1,5 @@
 
 
-
 body {
     background-color: #93D3FF;
     font-family: 'Jost', sans-serif;
@@ -132,6 +131,15 @@ line-height: 23px
     line-height: 35px;
     text-shadow: 1px 1px 1px #000;
     color: #3A99F0;
+}
+.arcade__name__kran {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 35px;
+    text-shadow: 1px 1px 1px #000;
+    color: #ffbc40;
 }
 
 
@@ -482,16 +490,16 @@ footer h6 {
     background-position: right; 
     transition: 1s ease;
   }
-  .foto-1:hover{
+  /* .foto-1:hover{
     
-    /* transform: scale(1.1); */
+    transform: scale(1.1);
     z-index: 8;
     border-radius: 10%;
     transition: transform 0.8s;
     background-size: auto;
     background-position: right top; 
 
-  }
+  } */
 .foto-2 {
     grid-area: foto2;
     background-image: url(img/nebo2jpeg.jpeg);
@@ -536,12 +544,30 @@ footer h6 {
     text-align: center;
   }
 
-  @media (max-width: 1550px) {
+  @media (min-width: 1550px) {
+
+.new-legoza {
+    height: 889px;
+}
+    .new-legoza h6 {
+        margin-top: 21px;
+    }
     .carousel {
         width: 70%;
     }
 }
+@media (min-width: 1052px) and (max-width: 1550px) {
+   
+    .new-legoza {
+        height: 889px;
+    }
+        .new-legoza h6 {
+            margin-top: 21px;
+        }
+}
 @media (max-width: 1052px) {
+
+
     .carousel {
         width: 80%;
     }
@@ -549,6 +575,9 @@ footer h6 {
         max-width: 750px;
         max-height: 935px;
         padding: 20px 20px;
+    }
+    .new-legoza h6 {
+        margin-top: -83px;
     }
     .cards-grid {
 	grid-template-columns: repeat(2, minmax(100px, 350px));
@@ -740,6 +769,16 @@ footer h6 {
     width: 35%;
   }
 
+
+  .kran img {
+    display: flex;
+      width: 50%;
+      margin: 0 auto;
+  }
+  .kran img:first-child {
+    margin-bottom: 2rem;
+  }
+
   .oblozca img:hover {
     -webkit-mask-position: 7.5% 50%,92.5% 50%;
             mask-position: 7.5% 50%,92.5% 50%;
@@ -760,7 +799,7 @@ footer h6 {
 }
 @media (max-width: 1052px) {
     
-    .ribca {
+    /* .ribca {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -768,12 +807,12 @@ footer h6 {
         gap: 50px;
         padding-top: 50px;
         padding-bottom: 50px;
-    }
+    } */
     .ribca img {
         width: 45%;
     }
     .oblozca-all {
-        width: 110%;
+        width: 100%;
     }
     .zoom-avtomat {
         width: 50%;
@@ -806,14 +845,7 @@ footer h6 {
             
         }
     
-        .oblozca {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            gap: 50px;
-            flex-direction: column;
-        }   
+    
     .ribca img {
         width: 60%;
     }
