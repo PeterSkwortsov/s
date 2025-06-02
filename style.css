@@ -12,6 +12,10 @@ body {
 
 }
 
+h5 {
+    font-size: 1.05rem;
+}
+
 .withe {
     padding: 25px 0;
     background-color: white;
@@ -19,6 +23,9 @@ body {
 }
 .withe-standart {
     padding: 25px 0;
+    background-color: white;
+}
+.withe-standart- {
     background-color: white;
 }
 
