@@ -395,6 +395,12 @@ header {
 .footer4 {
     color: #FFDF6A;
 }
+.footer5 {
+    color: #ffbc40;    ;
+}
+
+
+
 footer h6 {
     font-size: 12px;
 
@@ -884,7 +890,7 @@ footer h6 {
             flex-direction: column;
         }    
     .ribca img {
-        width: 85%;
+        width: 100%;
     }
     .zoom-avtomat {
         width: 70%;
