@@ -13,11 +13,11 @@ body {
 }
 
 h5 {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .withe {
-    padding: 25px 0;
+    padding: 5rem 0;
     background-color: white;
     padding-bottom: 50px;
 }
@@ -128,6 +128,9 @@ line-height: 23px
     text-transform: uppercase;
     text-shadow: 1px 1px 1px #000;
     color: #45B600;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
 }
 
 .arcade__name {
