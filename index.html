@@ -148,7 +148,19 @@
         <div class="container-fluid text-center">
           <div class="row align-self-center">
             <div class="col-12 py-4">
-              <div><img class="logo"  src="img/mylogo.jpg" alt="Логотип" style="width: 19rem; padding-bottom: 2rem">
+              <div style="margin: 0 auto; display: flex; align-content: center; justify-content: center;"><img class="logo"  src="img/mylogo.jpg" alt="Логотип" style="width: 19rem; padding-bottom: 2rem; display: block;
+                 width: clamp(12rem, 60vw, 25rem);
+                 max-width: 100%;
+                 height: auto;
+                 transition: all 0.3s ease;
+                 
+                 /* Медиа-запросы с использованием CSS-переменных */
+                 --mobile-width: min(14rem, 80vw);
+                 --tablet-width: min(18rem, 70vw);
+                 --desktop-width: 25rem;
+                 
+                 /* Базовое значение */
+                 width: var(--desktop-width);">
               </div>
         
             </div>
@@ -187,10 +199,32 @@
         <div class="text-center m-auto  col-sm-8 col-md-8 mt-5">
           <h5>Наши конструкторы - отличная возможность дать ребенку раскрыть его фантазию во множестве разных моделей,
             чего нельзя добиться играя с одним-тремя наборами дома!</h5>
-          <!-- <img src="img/swipe-right.png" alt="Указатель на слайдер" class="swipe mt-2"> -->
+
+          <h5 style="font-weight: bold;">Адреса наших площадок в Нижнем Новгороде:</h6>
         </div>
+        
       </div>
     </div>
+  </div>
+  <div class="container-fluid text-center">
+    <div class="row align-self-center">
+        <div style="margin: 0 auto; display: flex; align-content: center; justify-content: center;"><img class="logo" src="img/legoza-three.svg" alt="Три точки" style="width: 25rem; display: block;
+                 width: clamp(12rem, 60vw, 25rem);
+                 max-width: 100%;
+                 height: auto;
+                 transition: all 0.3s ease;
+                 
+                 /* Медиа-запросы с использованием CSS-переменных */
+                 --mobile-width: min(14rem, 80vw);
+                 --tablet-width: min(18rem, 70vw);
+                 --desktop-width: 25rem;
+                 
+                 /* Базовое значение */
+                 width: var(--desktop-width);">
+        </div>
+  
+    </div>
+  
   </div>
 </section>
 <section class="section-lego-room">
@@ -208,10 +242,9 @@
           количеством конструкторов для всех возрастов.</p>
 
         <ul class="features-list">
-          <li><i class="fas fa-check-circle"></i> Более 10 000 деталей LEGO различных тематик</li>
-          <li><i class="fas fa-check-circle"></i> Зона для малышей с крупными блоками</li>
-          <li><i class="fas fa-check-circle"></i> Зона для сборки гоночных машин и соревнований</li>
-          <li><i class="fas fa-check-circle"></i> Удобная зона отдыха для родителей</li>
+          <li><i class="fas fa-check-circle"></i> Более миллиона деталей LEGO различных тематик</li>
+          <li><i class="fas fa-check-circle"></i> Зона для малышей с мягким LEGO</li>
+          <li><i class="fas fa-check-circle"></i> Зона гоночных машин Hot Wheels и соревнований</li>
         </ul>
 
         <p>Наша комната спроектирована с учетом безопасности и комфорта детей. Все конструкторы регулярно дезинфицируются, а пространство организовано так, чтобы каждый нашел себе занятие по интересам.</p>
@@ -225,7 +258,7 @@
             <img
               src="img/IMG_0247.jpg"
               alt="Игровая комната LEGO">
-            <div class="slider-caption">Просторная игровая зона с тысячами деталей LEGO</div>
+            <div class="slider-caption">Просторная игровая зона с миллионами деталей</div>
           </div>
           <div class="slider-item">
             <img
@@ -243,7 +276,7 @@
             <img
               src="img/IMG_0254.jpg"
               alt="Стена для творчества LEGO">
-            <div class="slider-caption">Большие кирпичи для создания масштабных проектов</div>
+            <div class="slider-caption">Мягкие кирпичи для создания масштабных проектов</div>
           </div>
         </div>
 
