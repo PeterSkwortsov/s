@@ -17,7 +17,75 @@
     <link rel="stylesheet" href="script.js">
     <link rel="stylesheet" href="style.css">
   
-    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Элементы слайдера
+        const sliderItems = document.querySelectorAll('.slider-item');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentSlide = 0;
+        const totalSlides = sliderItems.length;
+
+        // Функция для переключения слайдов
+        function goToSlide(n) {
+          // Скрываем все слайды
+          sliderItems.forEach(item => item.classList.remove('active'));
+          dots.forEach(dot => dot.classList.remove('active'));
+
+          // Обработка циклического переключения
+          currentSlide = (n + totalSlides) % totalSlides;
+
+          // Показываем текущий слайд
+          sliderItems[currentSlide].classList.add('active');
+          dots[currentSlide].classList.add('active');
+        }
+
+        // Следующий слайд
+        function nextSlide() {
+          goToSlide(currentSlide + 1);
+        }
+
+        // Предыдущий слайд
+        function prevSlide() {
+          goToSlide(currentSlide - 1);
+        }
+
+        // Автопереключение слайдов каждые 5 секунд
+        let slideInterval = setInterval(nextSlide, 2500);
+
+        // Обработчики событий для кнопок
+        nextBtn.addEventListener('click', function () {
+          clearInterval(slideInterval);
+          nextSlide();
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        prevBtn.addEventListener('click', function () {
+          clearInterval(slideInterval);
+          prevSlide();
+          slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Обработчики событий для точек навигации
+        dots.forEach(dot => {
+          dot.addEventListener('click', function () {
+            clearInterval(slideInterval);
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            goToSlide(slideIndex);
+            slideInterval = setInterval(nextSlide, 5000);
+          });
+        });
+
+        // Обработчик для кнопки "Записаться на открытие"
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          alert('Спасибо за интерес к открытию нашей игровой комнаты LEGO! В ближайшее время мы свяжемся с вами для уточнения деталей.');
+        });
+      });
+    </script>
 
 </head>
   <body>
@@ -119,112 +187,94 @@
         <div class="text-center m-auto  col-sm-8 col-md-8 mt-5">
           <h5>Наши конструкторы - отличная возможность дать ребенку раскрыть его фантазию во множестве разных моделей,
             чего нельзя добиться играя с одним-тремя наборами дома!</h5>
-          <img src="img/swipe-right.png" alt="Указатель на слайдер" class="swipe mt-2">
-        </div>
-      </div>
-
-
-
-      <div class="row justify-content-center img-fluid max-width:100% mt-3 mb-3">
-        <div id="carouselExampleRide" class="carousel slide slide_show" data-bs-ride="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/legoza-2.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-            <div class="carousel-item">
-              <img src="img/legoza-3.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-            <div class="carousel-item">
-              <img src="img/legoza-4.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-            <div class="carousel-item">
-              <img src="img/legoza-5.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-
-            <div class="carousel-item">
-              <img src="img/legoza-7.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-            <div class="carousel-item">
-              <img src="img/legoza-8.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-            <div class="carousel-item">
-              <img src="img/legoza-9.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-            <div class="carousel-item">
-              <img src="img/legoza-10.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-
-            <div class="carousel-item">
-              <img src="img/legoza-12.jpeg" class="d-block w-100 radius"
-                alt="Фото конструктора развлекательного центра ЛЕГОЗА">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Предыдущий</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Следующий</span>
-          </button>
+          <!-- <img src="img/swipe-right.png" alt="Указатель на слайдер" class="swipe mt-2"> -->
         </div>
       </div>
     </div>
-  </div>
-
-
-  <!--  -->
-
-
-
-
-
-
-
-
-
-  <div class="new-legoza">
-    <!-- <div class="znak"><img src="./img/znak.svg" alt=""></div> -->
-    <div class="text-legoza">
-      <!-- <h4>Внимание! В ТЦ Седьмое небо открылась вторая <h3 class="legoza__name" id="chapter_three">ЛЕГОЗА</h3> -->
-      </h4>
-      <h5>Новые конструкторы, парящие самолеты, Эйфелевая башня, пожарная часть.<br> Собери свой город!</h5>
-    </div>
-
-    <div class="cards-grid">
-      <div class="card-demo foto-1"></div>
-      <div class="card-demo foto-2"><span class="badge bg-primary ms-2 fon-new">New</span></div>
-      <div class="card-demo foto-3"><span class="badge bg-primary ms-2 fon-new">New</span></div>
-    </div>
-
-    <h6>Работаем с заботой о вас в ТЦ НЕБО и ТЦ Седьмое Небо</h6>
   </div>
 </section>
+<section class="section-lego-room">
+  <div class="lego-badge">НОВАЯ ЛЕГОЗА!</div>
+  <div class="container">
+    <div class="section-header">
+      <h1>Открытие новой игровой комнаты LEGO</h1>
+      <p class="subtitle">Познакомьте вашего ребенка с увлекательным миром конструкторов в ТРЦ «МЕГА»!</p>
+    </div>
 
+    <div class="lego-room-content">
+      <div class="room-description">
+        <h2>Мир LEGO ждёт вас!</h2>
+        <p>Мы рады представить нашу новую игровую комнату — просторную, современную и оснащенную огромным
+          количеством конструкторов для всех возрастов.</p>
+
+        <ul class="features-list">
+          <li><i class="fas fa-check-circle"></i> Более 10 000 деталей LEGO различных тематик</li>
+          <li><i class="fas fa-check-circle"></i> Зона для малышей с крупными блоками</li>
+          <li><i class="fas fa-check-circle"></i> Зона для сборки гоночных машин и соревнований</li>
+          <li><i class="fas fa-check-circle"></i> Удобная зона отдыха для родителей</li>
+        </ul>
+
+        <p>Наша комната спроектирована с учетом безопасности и комфорта детей. Все конструкторы регулярно дезинфицируются, а пространство организовано так, чтобы каждый нашел себе занятие по интересам.</p>
+
+        
+      </div>
+
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slider-item active">
+            <img
+              src="img/IMG_0247.jpg"
+              alt="Игровая комната LEGO">
+            <div class="slider-caption">Просторная игровая зона с тысячами деталей LEGO</div>
+          </div>
+          <div class="slider-item">
+            <img
+              src="img/IMG_0229.jpg"
+              alt="Дети играют с LEGO">
+            <div class="slider-caption">Дети развивают моторику и креативность</div>
+          </div>
+          <div class="slider-item">
+            <img
+              src="img/IMG_0236.jpg"
+              alt="LEGO Technic">
+            <div class="slider-caption">Тематические наборы</div>
+          </div>
+          <div class="slider-item">
+            <img
+              src="img/IMG_0254.jpg"
+              alt="Стена для творчества LEGO">
+            <div class="slider-caption">Большие кирпичи для создания масштабных проектов</div>
+          </div>
+        </div>
+
+        <!-- <div class="slider-nav">
+          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div> -->
+
+        <div class="slider-dots">
+          <div class="dot active" data-slide="0"></div>
+          <div class="dot" data-slide="1"></div>
+          <div class="dot" data-slide="2"></div>
+          <div class="dot" data-slide="3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="withe-standart">
   <div class="container">
     <div class="row text-center justify-content-md-center">
 
-      <div class="typewriter">
-        <h1>Детские развлечения в Нижнем Новгороде!</h1>
+      <div style="margin-top: 2rem; margin-bottom: 2rem;">
+        <h1>Создаем счастливые эмоции по адресам:</h1>
       </div>
 
-      <h2>Создаем счастливые эмоции по адресам:</h2>
 
       <h2 class="fon p-2 rounded col-10 m-auto h-100 p-4 bg-light border rounded-3" id="chapter_one">
         <span class="legoza_text1">ТЦ Небо - ЛЕГОЗА (ул. Большая Покровская, 82, этаж 4).</span><br><br>
         <span class="legoza_text2">ТЦ Седьмое небо - London Bus, ЛЕГОЗА (ул. Бетанкура 1).</span><br><br>
-        <span class="legoza_text3">ТЦ Мега - London Bus, СуперТачки, Кран и Экскаватор, Рыбалочка&Шарики (село Федяково,
+        <span class="legoza_text3">ТЦ Мега - London Bus, СуперТачки, Кран и Экскаватор, Рыбалочка&Шарики, ЛЕГОЗА (село Федяково,
           ул. Любимая 1).<br><br></span>
         <span class="legoza_text4">ТЦ Фантастика - Аркадные автоматы (ул. Родионова 187В).</span>
 
@@ -237,6 +287,10 @@
     </div>
   </div>
 </section>
+
+
+
+
 
 
 
@@ -535,7 +589,7 @@
       <br>
       ТЦ Небо, Большая Покровская ул., 82, Нижний Новгород (этаж 4) -<span class="footer1"> ЛЕГОЗА</span><br>
       ТЦ Седьмое небо, ул. Бетанкура, 1, Нижний Новгород, рядом с фудкортом - <span class="footer2">London Bus</span> и<span class="footer1"> ЛЕГОЗА</span><br> 
-      ТЦ Мега, Любимая ул., 1, село Федяково, Кстовский район Нижегородской области, напротив фудкорта - <span class="footer2">London Bus</span>, <span class="footer4">СуперТачки</span>, <span class="footer3">Рыбалочка</span>&<span class="footer4">Шарики, </span><span class="footer5">Экскаватор и Кран</span><br>
+      ТЦ Мега, Любимая ул., 1, село Федяково, Кстовский район Нижегородской области, напротив фудкорта - <span class="footer2">London Bus</span>, <span class="footer4">СуперТачки</span>, <span class="footer3">Рыбалочка</span>&<span class="footer4">Шарики, </span><span class="footer5">Экскаватор и Кран</span>, <span class="footer1"> ЛЕГОЗА</span><br>
       ТЦ Фантастика, ул. Родионова, 187, Нижний Новгород, на территории фудкорта - <span class="footer3">Аркадные автоматы</span>
 
       <div  class="link-info">
